@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AZE PRO | Əyləncə və Yükləmə Portalı</title>
+    <style>
+        body { font-family: sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
+        
+        /* Üst Göy Panel */
+        .top-nav { background-color: #2196F3; color: white; padding: 10px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-weight: bold; font-size: 18px; }
+        .lang-icons img { width: 25px; margin-left: 5px; border: 1px solid #fff; }
+
+        /* Qırmızı Elan Paneli */
+        .news-flash { background-color: #ff0055; color: white; padding: 10px; text-align: center; font-weight: bold; font-size: 14px; border-bottom: 2px solid #fff; }
+
+        /* Saat və Tarix Hissəsi */
+        .info-box { background-color: #fff; padding: 10px; text-align: center; border-bottom: 1px solid #ddd; color: #d32f2f; }
+        .time { font-size: 20px; font-weight: bold; display: block; }
+
+        /* Bölmə Başlıqları (Göy) */
+        .category-header { background-color: #2196F3; color: white; padding: 8px; text-align: center; font-weight: bold; margin-top: 5px; }
+
+        /* Link Listləri */
+        .list-item { background-color: #fff; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; padding: 12px 15px; text-decoration: none; color: #000; font-size: 15px; }
+        .list-item:active { background-color: #e0e0e0; }
+        .item-text { display: flex; align-items: center; }
+        .star { color: #f44336; margin-right: 10px; font-size: 18px; }
+        .date-tag { background-color: #fff; border: 1px solid #f44336; color: #f44336; font-size: 11px; padding: 2px 5px; border-radius: 4px; }
+        .arrow { color: #8bc34a; font-weight: bold; }
+
+        /* Footer */
+        footer { text-align: center; padding: 15px; font-size: 12px; color: #777; }
+    </style>
+</head>
+<body>
+
+    <div class="top-nav">
+        <div class="logo">AZE PRO</div>
+        <div class="lang-icons">
+            AZ 🇦🇿 TR 🇹🇷 EN 🇺🇸 RU 🇷🇺
+        </div>
+    </div>
+
+    <div class="news-flash">
+        Ən Yeni SMM Panellər, AI Botlar və Proqramlar - Pulsuz Yükləmə Portalı
+    </div>
+
+    <div class="info-box">
+        Sabahınız Xeyir!<br>
+        <span class="time" id="clock">--:--</span>
+        <span id="date-str">-- Fevral 2026</span>
+    </div>
+
+    <div class="category-header">Ekskluziv Programlar</div>
+
+    <a href="#" class="list-item">
+        <span class="item-text"><span class="star">★</span> WhatsApp Plus Yüklə</span>
+        <span class="date-tag">10.02.2026</span>
+        <span class="arrow">➤</span>
+    </a>
+
+    <a href="#" class="list-item">
+        <span class="item-text"><span class="star">★</span> Instagram Pro Yüklə</span>
+        <span class="date-tag">01.01.2026</span>
+        <span class="arrow">➤</span>
+    </a>
+
+    <a href="#" class="list-item">
+        <span class="item-text"><span class="star">★</span> AI Şəkil Yaradan</span>
+        <span class="date-tag">Yeni</span>
+        <span class="arrow">➤</span>
+    </a>
+
+    <div class="category-header">Axtarış - Xidmətlər</div>
+
+    <a href="#" class="list-item">
+        <span class="item-text"><span class="star">★</span> SMM Xidmətləri</span>
+        <span class="arrow">➤</span>
+    </a>
+
+    <a href="https://t.me/Aze_Pro_Official" class="list-item">
+        <span class="item-text"><span class="star">★</span> Adminlə Əlaqə</span>
+        <span class="arrow">➤</span>
+    </a>
+
+    <footer>
+        &copy; 2026 AZE PRO | Bütün hüquqlar qorunur.
+    </footer>
+
+    <script>
+        // Saatı canlı yeniləmək üçün sadə kod
+        function updateClock() {
+            const now = new Date();
+            const timeStr = now.getHours().toString().padStart(2, '0') + ":" + now.getMinutes().toString().padStart(2, '0');
+            document.getElementById('clock').innerText = timeStr;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+
+</body>
+</html>
