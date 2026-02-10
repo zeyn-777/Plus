@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>AZE PRO | Pulsuz Android Oyunlar və Proqramlar Portalı</title>
+    <meta name="description" content="AZE PRO - Azərbaycanın ən böyük pulsuz rəqəmsal platforması. Ən son Android APK oyunları, premium proqramlar və SMM xidmətləri.">
+    <meta name="keywords" content="aze pro, apk yukle, pulsuz oyunlar, android proqramlar, azerbaycan apk, aze pro official">
+    <meta name="author" content="AZE PRO">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="AZE PRO | Pulsuz Oyun və Proqramlar">
+    <meta property="og:description" content="Android və iOS üçün ən yaxşı tətbiqlər burada.">
+    <meta property="og:image" content="logo.png">
+
+    <style>
+        :root {
+            --main-color: #24d195;
+            --bg-color: #f0f2f5;
+            --dark-blue: #1a2a6c;
+            --text-color: #333;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        /* Naviqasiya */
+        nav {
+            background: #fff;
+            padding: 10px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--dark-blue);
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+
+        .nav-brand img {
+            height: 45px;
+            margin-right: 10px;
+            border-radius: 50%;
+            border: 2px solid var(--main-color);
+        }
+
+        .search-container {
+            flex-grow: 1;
+            margin: 0 30px;
+        }
+
+        .search-container input {
+            width: 100%;
+            padding: 12px 20px;
+            border-radius: 25px;
+            border: 1px solid #ddd;
+            outline: none;
+            background: #f9f9f9;
+        }
+
+        /* Banner Sahəsi */
+        .hero-banner {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('banner.png');
+            background-size: cover;
+            background-position: center;
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        /* Kateqoriya Menyu */
+        .category-bar {
+            background: #fff;
+            padding: 15px 5%;
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            border-bottom: 1px solid #eee;
+        }
+
+        .category-bar a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 600;
+            white-space: nowrap;
+            padding: 5px 10px;
+        }
+
+        .category-bar a:hover, .category-bar a.active {
+            color: var(--main-color);
+            border-bottom: 3px solid var(--main-color);
+        }
+
+        /* App Grid */
+        .main-content {
+            padding: 30px 5%;
+        }
+
+        .section-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 25px;
+        }
+
+        .app-item {
+            background: #fff;
+            padding: 15px;
+            border-radius: 15px;
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .app-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .app-item img {
+            width: 85px;
+            height: 85px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            object-fit: cover;
+        }
+
+        .app-item h3 {
+            font-size: 0.95rem;
+            margin: 5px 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .app-item span {
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        /* Yönləndirmə Ekranı */
+        #loading-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 2000;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Footer */
+        footer {
+            background: #fff;
+            padding: 50px 5%;
+            border-top: 1px solid #eee;
+            margin-top: 50px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-logo img {
+            width: 100px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: var(--main-color);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="nav-brand">
+            <img src="logo.png" alt="AZE PRO Logo">
+            AZE PRO
+        </a>
+        <div class="search-container">
+            <input type="text" placeholder="Oyun, tətbiq və ya SMM xidməti axtarın...">
+        </div>
+    </nav>
+
+    <div class="category-bar">
+        <a href="#" class="active">Ana Səhifə</a>
+        <a href="#games">Oyunlar</a>
+        <a href="#apps">Proqramlar</a>
+        <a href="#">SMM Xidmətləri</a>
+        <a href="#">AI Botlar</a>
+    </div>
+
+    <div class="main-content">
+        <div class="section-title">
+            <h2>Populyar Oyunlar 🎮</h2>
+            <a href="#" style="color: var(--main-color); text-decoration: none; font-weight: bold;">Hamısına bax</a>
+        </div>
+        
+        <div class="app-grid" id="games">
+            <a href="javascript:void(0)" class="app-item" onclick="startDownload('https://t.me/Aze_Pro_Official')">
+                <img src="https://via.placeholder.com/100/e74c3c/fff?text=GTA" alt="GTA V">
+                <h3>GTA V Mobile</h3>
+                <span>Aksiyon • 1.2 GB</span>
+            </a>
+            <a href="javascript:void(0)" class="app-item" onclick="startDownload('https://t.me/Aze_Pro_Official')">
+                <img src="https://via.placeholder.com/100/3498db/fff?text=PUBG" alt="PUBG">
+                <h3>PUBG Mod 2026</h3>
+                <span>Savaş • 0.9 GB</span>
+            </a>
+            <a href="javascript:void(0)" class="app-item" onclick="startDownload('https://t.me/Aze_Pro_Official')">
+                <img src="https://via.placeholder.com/100/f1c40f/fff?text=MC" alt="Minecraft">
+                <h3>Minecraft Full</h3>
+                <span>Simulyasiya • 200 MB</span>
+            </a>
+        </div>
+
+        <div class="section-title" style="margin-top: 50px;">
+            <h2>Faydalı Proqramlar 🛠️</h2>
+        </div>
+
+        <div class="app-grid" id="apps">
+            <a href="javascript:void(0)" class="app-item" onclick="startDownload('https://t.me/Aze_Pro_Official')">
+                <img src="https://via.placeholder.com/100/2481cc/fff?text=TG" alt="Telegram">
+                <h3>Telegram 2026</h3>
+                <span>Sosial • 65 MB</span>
+            </a>
+            <a href="javascript:void(0)" class="app-item" onclick="startDownload('mailto:azeproofficial@gmail.com')">
+                <img src="https://via.placeholder.com/100/9b59b6/fff?text=VPN" alt="VPN">
+                <h3>VPN Pro Max</h3>
+                <span>Alətlər • 15 MB</span>
+            </a>
+        </div>
+    </div>
+
+    <div id="loading-overlay">
+        <img src="logo.png" alt="AZE PRO" style="width: 120px; border-radius: 50%; margin-bottom: 20px;">
+        <h2 style="color: var(--main-color);">Yükləmə Hazırlanır...</h2>
+        <p>AZE PRO təhlükəsizlik yoxlaması aparılır.</p>
+        <div style="font-size: 3rem; font-weight: bold; margin: 20px 0;" id="timer">10</div>
+        <p>Lütfən gözləyin, fayl bir neçə saniyəyə hazır olacaq.</p>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-logo">
+                <img src="logo.png" alt="AZE PRO Logo">
+                <h3>AZE PRO | SMM & AI Xidmətləri 🇦🇿</h3>
+                <p>İnsanlara yardım üçün hər şey sıfırdan və pulsuz.</p>
+            </div>
+            <div class="contact-info">
+                <h4>BİZİMLƏ ƏLAQƏ</h4>
+                <p>📢 Telegram: <a href="https://t.me/Aze_Pro_Official" style="color: #2481cc; text-decoration: none; font-weight: bold;">@Aze_Pro_Official</a></p>
+                <p>📧 Email: <a href="mailto:azeproofficial@gmail.com" style="color: #d44638; text-decoration: none; font-weight: bold;">azeproofficial@gmail.com</a></p>
+                <p>👤 Admin: <strong>Aze_Pro_Official</strong></p>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2026 AZ Pro tərəfindən qorunur. Bütün hüquqlar qorunur.
+        </div>
+    </footer>
+
+    <script>
+        function startDownload(url) {
+            document.getElementById('loading-overlay').style.display = 'flex';
+            let timeLeft = 10;
+            let timerElement = document.getElementById('timer');
+
+            let countdown = setInterval(() => {
+                timeLeft--;
+                timerElement.innerText = timeLeft;
+                if (timeLeft <= 0) {
+                    clearInterval(countdown);
+                    window.location.href = url;
+                }
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
