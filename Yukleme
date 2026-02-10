@@ -1,0 +1,32 @@
+<section id="android">
+    <h2 style="font-size: 2.5rem; margin-bottom: 30px;">Premium Proqramlar 2026</h2>
+    
+    <div class="grid-container" style="display: flex; justify-content: center; gap: 25px; flex-wrap: wrap;">
+        
+        <div class="item-card" style="background: white; color: #333; padding: 25px; border-radius: 20px; width: 280px; box-shadow: 0 10px 20px rgba(0,0,0,0.3); transition: 0.3s;">
+            <div style="font-size: 60px; margin-bottom: 15px;">🔹</div>
+            <h3 style="margin: 10px 0;">Telegram 2026</h3>
+            <p style="font-size: 0.9rem; color: #666;">Ultra Sürətli & Təhlükəsiz <br> (Versiya: 10.5.2 - Global)</p>
+            
+            <ul style="text-align: left; font-size: 0.85rem; padding-left: 20px; margin: 15px 0;">
+                <li>Premium Funksiyalar ✨</li>
+                <li>Yüksək Sürətli Yükləmə ⚡</li>
+                <li>Yeni 2026 Emojiləri 😎</li>
+            </ul>
+
+            <button class="btn-download" 
+                    onclick="startDownload('https://telegram.org/dl/android')" 
+                    style="background: #2481cc; color: white; border: none; padding: 15px; border-radius: 10px; cursor: pointer; width: 100%; font-weight: bold;">
+                İndi Yüklə ⬇️
+            </button>
+        </div>
+
+        <div class="item-card" style="background: white; color: #333; padding: 25px; border-radius: 20px; width: 280px; box-shadow: 0 10px 20px rgba(0,0,0,0.3); opacity: 0.8;">
+            <div style="font-size: 60px; margin-bottom: 15px;">📸</div>
+            <h3 style="margin: 10px 0;">Instagram Pro</h3>
+            <p style="font-size: 0.9rem; color: #666;">Reklamsız & Gizli Baxış <br> (Versiya: 2026 v1)</p>
+            <button class="btn-download" disabled style="background: #ccc; cursor: not-allowed; width: 100%; padding: 15px; border-radius: 10px; border: none;">Tezliklə...</button>
+        </div>
+
+    </div>
+</section>
